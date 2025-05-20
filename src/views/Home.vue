@@ -1,14 +1,15 @@
 <template>
-  <div class="home">
-    <h1>首页</h1>
+  <div id="homeView">
+    <h1>{{ msg }}</h1>
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+const msg = "欢迎来到俄钓4钓鱼助手~";
 </script>
 
 <style scoped>
-.home {
+#homeView {
   padding: 20px;
 }
-</style> 
+</style>

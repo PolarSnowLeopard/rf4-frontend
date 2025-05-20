@@ -1,7 +1,9 @@
 <template>
     <div id="BasicLayout">
         <a-layout>
-            <a-layout-header>Header</a-layout-header>
+            <a-layout-header class="header">
+                <GlobalHeader />
+            </a-layout-header>
             <a-layout-content class="content">
                 <router-view />
             </a-layout-content>
@@ -15,8 +17,7 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-const selectedKeys = ref(['2']);
+import GlobalHeader from '@/components/GlobalHeader.vue';
 </script>
 
 <style scoped>
@@ -25,18 +26,27 @@ const selectedKeys = ref(['2']);
     width: 100vw;
 }
 
+#BasicLayout .header {
+    padding-inline: 20px;
+    margin-bottom: 16px;
+    color: unset;
+    background: white;
+}
+
+#BasicLayout .content {
+    padding: 16px;
+    height: calc(100vh - 150px);
+    margin-bottom: 50px;
+    background-color: #fefefe;
+}
+
 #BasicLayout .footer {
-    background-color: #efefef;
+    background-color: #fefefe;
     text-align: center;
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
     padding: 16px;
-}
-
-#BasicLayout .content {
-    padding: 16px;
-    margin-bottom: 50px;
 }
 </style>
