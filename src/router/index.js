@@ -1,5 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import BasicLayout from '@/layouts/BasicLayout.vue'
+import FishManueList from '@/views/FishManueList.vue'
+import FishDetailView from '@/views/FishDetailView.vue'
 
 const routes = [
   {
@@ -14,7 +16,13 @@ const routes = [
       {
         path: '/manue/fish',
         name: 'manueFish',
-        component: () => import('@/views/FishManueList.vue')
+        component: FishManueList
+      },
+      {
+        path: '/manue/fish/:name',
+        name: 'manueFishDetail',
+        component: FishDetailView,
+        props: true
       },
       {
         path: '/user/login',
